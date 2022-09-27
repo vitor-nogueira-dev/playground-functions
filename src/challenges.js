@@ -19,14 +19,17 @@ function calcArea(base, height) {
 // Desafio 3
 
 function splitSentence(frase) {
-  let myArray = frase.split(" ");
+  let myArray = frase.split(' ');
   return myArray;
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(nomes) {
+  let primeiroNome = nomes[0];
+  let ultimoNome = nomes[nomes.length - 1];
+  return ultimoNome + ', ' + primeiroNome;
 }
+console.log(concatName(['foguete', 'não', 'tem', 'ré']));
 
 // Desafio 5
 function footballPoints() {
