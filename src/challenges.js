@@ -29,7 +29,7 @@ function concatName(nomes) {
   let ultimoNome = nomes[nomes.length - 1];
   return ultimoNome + ', ' + primeiroNome;
 }
-console.log(concatName(['foguete', 'não', 'tem', 'ré']));
+concatName(['foguete', 'não', 'tem', 'ré']);
 
 // Desafio 5
 function footballPoints() {
