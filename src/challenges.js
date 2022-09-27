@@ -32,14 +32,14 @@ function concatName(nomes) {
 concatName(['foguete', 'não', 'tem', 'ré']);
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let counterWins = wins * 3 + ties;
+  return counterWins;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
-}
+
+function highestCount() {}
 
 // Desafio 7
 function catAndMouse() {
