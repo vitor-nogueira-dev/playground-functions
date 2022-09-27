@@ -113,8 +113,19 @@ function decode(string) {
 decode('4l1, 2st45 n1 tryb2');
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, name) {
+  if (array.length === 5) {
+    array = array.sort();
+  }
+  let arrayTechAndName = [];
+
+  if (array.length === 0) {
+    return 'Vazio!';
+  }
+  for (let index in array) {
+    arrayTechAndName.push({ tech: array[index], name: name });
+  }
+  return arrayTechAndName;
 }
 
 module.exports = {
