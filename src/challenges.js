@@ -1,8 +1,15 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui
-}
+const tigre = false;
+const onca = true;
+const lobo = false;
+const leao = true;
 
+function compareTrue(param1, param2) {
+  if (param1 === true && param2 === true) {
+    return true;
+  }
+  return false;
+}
 // Desafio 2
 function calcArea() {
   // seu código aqui
