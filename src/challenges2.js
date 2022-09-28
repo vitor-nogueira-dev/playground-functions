@@ -48,8 +48,6 @@ function generatePhoneNumber(numeros) {
   );
 }
 
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 7, 7, 8, 9, 3, 0, 2]));
-
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   let soma = lineB + lineC;
@@ -59,11 +57,18 @@ function triangleCheck(lineA, lineB, lineC) {
   }
   return false;
 }
-console.log(triangleCheck(10, 5, 6));
-
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  let numerosString = string.match(/\d+/g);
+  let soma = 0;
+  for (let index of numerosString) {
+    soma += parseInt(index);
+  }
+  if (soma === 1) {
+    return `${soma} copo de água`;
+  } else {
+    return `${soma} copos de água`;
+  }
 }
 
 module.exports = {
