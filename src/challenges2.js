@@ -21,54 +21,22 @@ function generatePhoneNumber(numeros) {
     }
   }
   return (
-    '(' +
-    numeros[0] +
-    '' +
-    numeros[1] +
-    ')' +
-    ' ' +
-    numeros[2] +
-    '' +
-    numeros[3] +
-    '' +
-    numeros[4] +
-    '' +
-    numeros[5] +
-    '' +
-    numeros[6] +
-    '-' +
-    numeros[7] +
-    '' +
-    numeros[8] +
-    '' +
-    numeros[9] +
-    '' +
-    numeros[10] +
-    ''
+    `(${numeros[0]}${numeros[1]})` +
+    ` ${numeros[2]}${numeros[3]}${numeros[4]}${numeros[5]}${numeros[6]}-${numeros[7]}${numeros[8]}${numeros[9]}${numeros[10]}`
   );
 }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
-  let soma = lineB + lineC;
-  let valorAbsoluto = Math.abs(lineB - lineC);
-  if (lineA < soma && lineA > valorAbsoluto) {
-    return true;
-  }
-  return false;
+  return lineA < lineB + lineC && lineA > Math.abs(lineB - lineC);
 }
+
 // Desafio 13
 function hydrate(string) {
-  let numerosString = string.match(/\d+/g);
-  let soma = 0;
-  for (let index of numerosString) {
-    soma += parseInt(index);
-  }
-  if (soma === 1) {
-    return `${soma} copo de água`;
-  } else {
-    return `${soma} copos de água`;
-  }
+  const totalWater = string
+    .match(/\d+/g)
+    .reduce((sum, num) => sum + parseInt(num, 10), 0);
+  return `${totalWater} copo${totalWater !== 1 ? 's' : ''} de água`;
 }
 
 module.exports = {
