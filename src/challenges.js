@@ -1,44 +1,19 @@
 // Desafio 1
-const tigre = false;
-const onca = true;
-const lobo = false;
-const leao = true;
+const compareTrue = (param1, param2) => (!!(param1 && param2 === true));
 
-function compareTrue(param1, param2) {
-  if (param1 === true && param2 === true) {
-    return true;
-  }
-  return false;
-}
 // Desafio 2
-let result = 0;
-function calcArea(base, height) {
-  result = (base * height) / 2;
-  return result;
-}
-// Desafio 3
+const calcArea = (base, height) => (base * height) / 2;
 
-function splitSentence(frase) {
-  let myArray = frase.split(' ');
-  return myArray;
-}
+// Desafio 3
+const splitSentence = (frase) => frase.split(' ');
 
 // Desafio 4
-function concatName(nomes) {
-  let primeiroNome = nomes[0];
-  let ultimoNome = nomes[nomes.length - 1];
-  return ultimoNome + ', ' + primeiroNome;
-}
-concatName(['foguete', 'não', 'tem', 'ré']);
+const concatName = (nomes) => `${nomes[nomes.length - 1]}, ${nomes[0]}`;
 
 // Desafio 5
-function footballPoints(wins, ties) {
-  let counterWins = wins * 3 + ties;
-  return counterWins;
-}
+const footballPoints = (wins, ties) => (wins * 3) + ties;
 
 // Desafio 6
-
 function highestCount(numeros) {
   let repeticoes = 0;
   let maiorNumero = Math.max.apply(null, numeros);
@@ -52,44 +27,31 @@ function highestCount(numeros) {
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let distanciaCat1 = 0;
-  let distanciaCat2 = 0;
+  const distanciaCat1 = Math.abs(cat1 - mouse);
+  const distanciaCat2 = Math.abs(cat2 - mouse);
 
-  if (cat1 - mouse < 0) {
-    distanciaCat1 = -1 * (cat1 - mouse);
-  } else if (cat1 - mouse >= 0) {
-    distanciaCat1 = cat1 - mouse;
-  }
-  if (cat2 - mouse < 0) {
-    distanciaCat2 = -1 * (cat2 - mouse);
-  } else if (cat2 - mouse >= 0) {
-  }
-  distanciaCat2 = cat2 - mouse;
-
-  if (distanciaCat2 < distanciaCat1) {
-    return 'cat2';
-  } else if (distanciaCat2 === distanciaCat1) {
+  if (distanciaCat1 === distanciaCat2) {
     return 'os gatos trombam e o rato foge';
-  } else {
-    return 'cat1';
   }
+  return distanciaCat1 < distanciaCat2 ? 'cat1' : 'cat2';
 }
 
+console.log(catAndMouse(0, -4, 2));
 // Desafio 8
-function fizzBuzz(numeros) {
-  retornoStrings = [];
-  for (let index in numeros) {
-    if (numeros[index] % 3 === 0 && numeros[index] % 5 === 0) {
-      retornoStrings.push('fizzBuzz');
-    } else if (numeros[index] % 5 === 0) {
-      retornoStrings.push('buzz');
-    } else if (numeros[index] % 3 === 0) {
-      retornoStrings.push('fizz');
-    } else if (numeros[index] % 3 !== 0 && numeros[index] % 5 !== 0) {
-      retornoStrings.push('bug!');
+function fizzBuzz(numbers) {
+  let result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 3 === 0 && numbers[i] % 5 === 0) {
+      result.push('fizzBuzz');
+    } else if (numbers[i] % 5 === 0) {
+      result.push('buzz');
+    } else if (numbers[i] % 3 === 0) {
+      result.push('fizz');
+    } else {
+      result.push('bug!');
     }
   }
-  return retornoStrings;
+  return result;
 }
 // Desafio 9
 function encode(string) {
@@ -123,7 +85,7 @@ function techList(array, name) {
     return 'Vazio!';
   }
   for (let index in array) {
-    arrayTechAndName.push({ tech: array[index], name: name });
+    arrayTechAndName.push({ tech: array[index], name });
   }
   return arrayTechAndName;
 }
